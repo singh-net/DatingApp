@@ -1,3 +1,4 @@
+import { PhotoEditorComponent } from './members/photo-editor/photo-editor.component';
 import { PreventUnsavedChanges } from './_guard/prevent-unsaved-changes.guard';
 import { AlertifyService } from './_services/alertify.service';
 import { UserService } from './_services/user.service';
@@ -15,6 +16,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { JwtModule } from '@auth0/angular-jwt';
+import { FileUploadModule } from 'ng2-file-upload';
+
 
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -49,7 +52,8 @@ export function tokenGetter() {
       MessagesComponent,
       MemberCardComponent,
       MemberDetailComponent,
-      MemberEditComponent
+      MemberEditComponent,
+      PhotoEditorComponent
    ],
    imports: [
       BrowserModule,
@@ -58,6 +62,7 @@ export function tokenGetter() {
       BsDropdownModule.forRoot(),
       TabsModule.forRoot(),
       BrowserAnimationsModule,
+      FileUploadModule,
       RouterModule.forRoot(appRoutes),
       NgxGalleryModule,
       JwtModule.forRoot( {
