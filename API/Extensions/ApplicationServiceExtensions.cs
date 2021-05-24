@@ -23,6 +23,8 @@ namespace API.Extensions
             
             services.AddAutoMapper(typeof(AutoMapperProfiles).Assembly);
 
+            services.AddScoped<LogUserActivity>();
+
             services.AddDbContext<DataContext>(options =>
             {
                 options.UseSqlServer(config.GetConnectionString("DefaultConnection"));
