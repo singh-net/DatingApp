@@ -22,10 +22,8 @@ namespace API.Entities
         public string Country { get; set; }
         public ICollection<Photo> Photos { get; set; } 
 
-        // public int GetAge() //Get keyword will help automapper to get age for property age in membersDto
-        // {
-        //     return DateofBirth.CalculateAge();
-        // }
+       public ICollection<UserLike> LikedByUsers { get; set; }  
+       public ICollection<UserLike> LikedUsers { get; set; }
 
 
     }
