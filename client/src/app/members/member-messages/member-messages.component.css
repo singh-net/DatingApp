@@ -1,0 +1,43 @@
+.card {
+    border: none;
+}
+
+.chat {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.chat li {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px dotted #B3A9A9;
+}
+
+.rounded-circle {
+    max-height: 50px;
+}
+
+
+.vertical-scrollable> .row {
+    position: absolute;
+    top: 120px;
+    bottom: 100px;
+    left: 180px;
+    width: 50%;
+    overflow-y: scroll; 
+  }
+  .col-sm-8 { 
+      color: white; 
+      font-size: 24px; 
+      padding-bottom: 20px; 
+      padding-top: 18px; 
+  } 
+    
+  .col-sm-8:nth-child(2n+1) { 
+      background: green; 
+  } 
+    
+  .col-sm-8:nth-child(2n+2) { 
+      background: black; 
+  } 
