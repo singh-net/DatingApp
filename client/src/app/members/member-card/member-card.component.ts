@@ -1,3 +1,4 @@
+import { PresenceService } from './../../_services/presence.service';
 import { ToastrService } from 'ngx-toastr';
 import { MembersService } from 'src/app/_services/members.service';
 import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
@@ -13,7 +14,9 @@ export class MemberCardComponent implements OnInit {
 
   constructor(
     private memberService: MembersService,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    public presence: PresenceService
+
   ) {}
 
   ngOnInit(): void {}
