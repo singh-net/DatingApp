@@ -37,7 +37,7 @@ namespace API.Extensions
 
                 var env = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
 
-                string connStr = "";
+                string connStr;
 
                 // Depending on if in development or production, use either Heroku-provided
                 // connection string, or development connection string from env var.
@@ -46,7 +46,7 @@ namespace API.Extensions
                     // Use connection string from file.
                     connStr = config.GetConnectionString("DefaultConnection");
                 }
-                else if (env == "Production")
+                else
                 {
                     // Use connection string provided at runtime by Heroku.
                     var connUrl = Environment.GetEnvironmentVariable("DATABASE_URL");
@@ -63,7 +63,7 @@ namespace API.Extensions
                     var pgPort = pgHostPort.Split(":")[1];
 
                    //connStr =  $"Server={pgHost};Port={pgPort};User Id={pgUser};Password={pgPass};Database={pgDb};SSL Mode=Prefer;Trust Server Certificate=True";
-                    connStr = $"Server={pgHost};Port={pgPort};User Id={pgUser};Password={pgPass};Database={pgDb};sslmode=Require;Trust Server Certificate=true;"; 
+                    connStr = $"Server={pgHost};Port={pgPort};User Id={pgUser};Password={pgPass};Database={pgDb};sslmode=Prefer;Trust Server Certificate=true;"; 
                 }
 
                 // Whether the connection string came from the local development configuration file
