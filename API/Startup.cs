@@ -58,7 +58,7 @@ namespace API
                            .AllowAnyMethod()
                            .AllowCredentials()
                            .WithExposedHeaders("Pagination")
-                           .WithOrigins("https://localhost:4200"));
+                           .WithOrigins("https://localhost:4200", "https://bettermatch.herokuapp.com"));
 
             app.UseAuthentication();
 
